@@ -1,0 +1,19 @@
+# here we need to manually fill the subscriptions which want to deploy our terraform in
+
+# here is the "CIS Development" subscription in Azure (comment out if needed)
+//subscription = "e........................................"
+
+# Mondoo testing subs
+subscription = "f.........................................."
+
+# The Username & Password has been used for several databases
+administrator_login          = "............."
+administrator_login_password = "............."
+
+# The Username need to be writen in fqdn and the Object Id of the user can be easily found in Azure Active Directory + users + overview
+login_username_mssql = "................................"
+object_id_mssql      = "********-****-****-****-************"
+
+# The email address will be used in several application for administration tasks and alert, write one email address here!
+emails = "......................."
+

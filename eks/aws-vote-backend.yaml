@@ -1,0 +1,47 @@
+# A Redis instance.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-vote-back
+  namespace: security-team
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aws-vote-back
+  template:
+    metadata:
+      labels:
+        app: aws-vote-back
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      #serviceAccountName: security-team-serviceaccount
+      containers:
+      - name: aws-vote-back
+        image: mcr.microsoft.com/oss/bitnami/redis:6.0.8
+        env:
+        - name: ALLOW_EMPTY_PASSWORD
+          value: "yes"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 6379
+          name: redis
+---
+# An internal service for the Redis instance.
+apiVersion: v1
+kind: Service
+metadata:
+  name: aws-vote-back
+  namespace: security-team
+spec:
+  ports:
+  - port: 6379
+  selector:
+    app: aws-vote-back

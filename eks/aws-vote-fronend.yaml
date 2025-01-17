@@ -1,0 +1,46 @@
+# The sample Azure Vote Python applications.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-vote-front
+  namespace: security-team
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aws-vote-front
+  template:
+    metadata:
+      labels:
+        app: aws-vote-front
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: aws-vote-front
+        image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 80
+        env:
+        - name: REDIS
+          value: "aws-vote-back"
+---
+# An external service to access the Azure Vote application from the internet.
+apiVersion: v1
+kind: Service
+metadata:
+  name: aws-vote-front
+  namespace: security-team
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: aws-vote-front

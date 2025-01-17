@@ -1,0 +1,30 @@
+company               = "mondoo"
+app_name              = "security team"
+environment           = "dev"
+#location              = "Germany West Central"
+location = "West Europe"
+azure-subscription-id = "XXXXXXX"
+
+network-vnet-cidr   = "10.127.0.0/16"
+network-subnet-cidr = "10.127.1.0/24"
+
+ad_domain_name                      = "mondoo.local"
+ad_domain_netbios_name              = "mondoo"
+ad_admin_username                   = "hrouhan"
+ad_admin_password                   = "XXXXXXXXXXX"
+ad_safe_mode_administrator_password = "XXXXXXXXXXX"
+
+# example for ad_safe_mode_administrator_password pass R3c0v3ryAcc3ssM0d3
+
+# we needs a good system for exchange server installation
+
+ad_dc1_name       = "hrz-sec-dc1"
+ad_dc1_ip_address = "10.127.1.11"
+#dc1_vm_size       = "Standard_B2s"
+dc1_vm_size       = "Standard_D4_v3"
+
+ad_dj1_name       = "hrz-sec-dj1"
+ad_dj1_ip_address = "10.127.1.12"
+#dj1_vm_size       = "Standard_B2s"
+dj1_vm_size       = "Standard_D4_v3"
+#dj1_vm_size        = "Standard_D8_v3"

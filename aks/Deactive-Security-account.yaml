@@ -1,0 +1,8 @@
+# #This is for patching the default service account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  namespace: security-team
+  name: default 
+automountServiceAccountToken: false
+
