@@ -5,13 +5,13 @@
 # active directory domain name
 variable "ad_domain_name" {
   type        = string
-  description = "This variable defines the name of Active Directory domain, for example mondoo.local"
+  description = "This variable defines the name of Active Directory domain, for example hrouhan.local"
 }
 
 # active directory domain netbios name
 variable "ad_domain_netbios_name" {
   type        = string
-  description = "This variable defines the NETBIOS name of Active Directory domain, for example mondoo"
+  description = "This variable defines the NETBIOS name of Active Directory domain, for example hrouhan"
 }
 
 # active directory domain mode

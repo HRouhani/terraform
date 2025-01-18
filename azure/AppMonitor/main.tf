@@ -56,8 +56,8 @@ resource "azurerm_monitor_action_group" "security-actiongroup1" {
     name          = "security-emailAction"
   }
   webhook_receiver {
-    name                    = "MondooPol"
-    service_uri             = "http://mondoo.com"
+    name                    = "hrouhanPol"
+    service_uri             = "http://hrouhan.com"
     use_common_alert_schema = true
   }
 }
@@ -71,8 +71,8 @@ resource "azurerm_monitor_action_group" "security-actiongroup2" {
     name          = "security-emailAction"
   }
   webhook_receiver {
-    name                    = "MondooPol"
-    service_uri             = "http://mondoo.com"
+    name                    = "hrouhanPol"
+    service_uri             = "http://hrouhan.com"
     use_common_alert_schema = true
   }
 }
@@ -81,6 +81,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert1" {
   name                = "Security-policy-delete"
   resource_group_name = var.resource_group_name
   scopes              = [var.resource_group_id]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
   }
@@ -95,6 +96,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert2" {
   name                = "Security-policy-net"
   resource_group_name = var.resource_group_name
   scopes              = [var.resource_group_id]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
 
@@ -110,6 +112,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert3" {
   name                = "Security-policy-netDelete"
   resource_group_name = var.resource_group_name
   scopes              = [var.resource_group_id]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
 
@@ -125,6 +128,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert4" {
   name                = "Security-policy-public-delete"
   resource_group_name = var.resource_group_name
   scopes              = [var.resource_group_id]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
 
@@ -140,6 +144,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert5" {
   name                = "Security-policy-publicIP"
   resource_group_name = var.resource_group_name
   scopes              = [var.scope_publicIP]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
 
@@ -154,6 +159,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert6" {
   name                = "Security-policy-sec"
   resource_group_name = var.resource_group_name
   scopes              = [var.resource_group_id]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
 
@@ -169,6 +175,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert7" {
   name                = "Security-policy-secdelete"
   resource_group_name = var.resource_group_name
   scopes              = [var.resource_group_id]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
 
@@ -184,6 +191,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert8" {
   name                = "Security-policy-sqlCreate"
   resource_group_name = var.resource_group_name
   scopes              = [var.scope_sqlserver]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
 
@@ -198,6 +206,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert9" {
   name                = "Security-policy-sqlfirewall1"
   resource_group_name = var.resource_group_name
   scopes              = [var.resource_group_id]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
 
@@ -213,6 +222,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert10" {
   name                = "Security-policy-sqlfirewalldelete"
   resource_group_name = var.resource_group_name
   scopes              = [var.resource_group_id]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
 
@@ -228,6 +238,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert11" {
   name                = "Security-test2"
   resource_group_name = var.resource_group_name
   scopes              = ["/subscriptions/${var.subscription}"]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup2.id
   }
@@ -242,6 +253,7 @@ resource "azurerm_monitor_activity_log_alert" "security-logalert12" {
   name                = "Security-policy-write"
   resource_group_name = var.resource_group_name
   scopes              = [var.resource_group_id]
+  location            = var.location-westEU
   action {
     action_group_id = azurerm_monitor_action_group.security-actiongroup1.id
   }

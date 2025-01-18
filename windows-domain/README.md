@@ -84,7 +84,7 @@ Second step:   Load the CIS GPO kit for the respected server (here the Domain Co
 
         a.  Server Manager Dashboard --> Tools --> Group Policy Management
 
-        b.  Group Policy Management --> Forest: mondoo.local --> Domains --> mondoo.local --> Group Policy Objects --> Default Domain Controllers Policy (Right Click) --> Import Settings...  -->  Backup folder --> C:\CIS\DC L1
+        b.  Group Policy Management --> Forest: hrouhan.local --> Domains --> hrouhan.local --> Group Policy Objects --> Default Domain Controllers Policy (Right Click) --> Import Settings...  -->  Backup folder --> C:\CIS\DC L1
 
             We choose "DC L1" from our CIS Toolkit 
 

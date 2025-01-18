@@ -1,5 +1,5 @@
 
-login with az command to the azure platform (we tested on "k8s Operator Dev" subscription by azuremondoo.onmicrosoft.com account which automatically will choose the k8s subscription)
+login with az command to the azure platform (we tested on "k8s Operator Dev" subscription by azurehrouhan.onmicrosoft.com account which automatically will choose the k8s subscription)
 
 ```
 az login

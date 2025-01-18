@@ -17,7 +17,7 @@ spec:
   - command:
     - sleep
     - "7200"
-    image: mondoo/cnspec
+    image: hrouhan/cnspec
     name: cnspec
     volumeMounts:
       - name: root
